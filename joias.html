@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuella Pratas</title>
+    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Estilos gerais do cabeçalho */
+        header {
+            padding: 10px 0;
+            position: fixed; /* Fixa o cabeçalho no topo da página */
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* Z-index alto para ficar acima de outros elementos */
+            transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+            background: #D6249F;
+	    background: radial-gradient(circle at 100% 107%, #FDF497 0%, #FDF497 0%, #D6249F 45%,#D6249F 60%,#285AEB 90%);
+            color: #fff; /* Cor do texto do cabeçalho */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        header nav ul li {
+           margin-top: 10px;
+           margin-right: 40px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 30px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        header nav ul li a:hover {
+            background-color: #555; /* Cor de fundo ao passar o mouse */
+            transform: translateY(-3px); /* Efeito de levantar um pouco ao passar o mouse */
+        }
+
+        /* Estilos específicos para as imagens de paralaxe */
+        .parallax {
+            height: 1390px; /* Ajuste da altura da imagem de paralaxe */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 10px; /* Espaçamento abaixo da imagem de paralaxe */
+            position: relative; /* Para posicionar os cards dentro da div .parallax */
+        }
+
+        /* Estilo adicional para ajustar o tamanho da imagem de paralaxe */
+        .parallax img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        /* Estilos para os cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 3 colunas com largura igual */
+            gap: 20px; /* Espaçamento entre os cards */
+            max-width: 3000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%; /* Ocupa toda a largura do grid cell */
+        }
+
+        .card img {
+            width: 102%;
+            height: 60%;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card .info {
+            padding: 10px;
+        }
+
+        .card .info h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .card .info p {
+            margin: 5px 0;
+        }
+
+        .card .info .price {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Estilos para responsividade */
+        @media (max-width: 992px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cards-container {
+                grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+            }
+        }
+.beneficios {
+    background: #FFFFFF;
+    padding: 20px;
+}
+
+.iconeig {
+	    border-radius: 100%;
+            padding: 25px 10px 9px 10px;
+            color: #fff;
+}
+
+        .iconeig:hover {
+	    color: #fff;
+            transform: translateY(-3px); /* Efeito de levantar um pouco ao passar o mouse */
+        }
+
+.iconeig2 {
+	    border-radius: 10%;
+            padding: 25px 10px 9px 10px;
+            color: #fff;
+}
+
+        .iconeig2:hover {
+	    color: #fff;
+            transform: translateY(-3px); /* Efeito de levantar um pouco ao passar o mouse */
+        }
+
+ul {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+	margin-left:5%;
+
+}
+.imagembeneficios {
+	margin-left:22%;
+    width: 20%;
+}
+
+.imagemcard {
+	margin-left:0%;
+	margin-right:0%;
+	width: 20%;
+	height:10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Manuella Pratas</h1>
+            <nav>
+                <ul>
+                    <li><a href="#destaques">Destaques</a></li>
+                    <li><a href="#novidades">Mostruário</a></li>
+                    <li><a href="#contato">Contato</a></li>
+		    <li><a class="iconeig2" href="https://www.instagram.com/manuella.pratas.pedras">  <i class="fa fa-instagram" style="font-size:36px">  </a></i></li>
+		    <li><a class="iconeig" href=" https://wa.me/11932054181">  <i class="fa fa-whatsapp"  style="font-size:36px">  </a></i></li>
+            </nav>
+        </div>
+    </header>
+<br><br><br><>
+
+<div class="beneficios">
+                <h3 class="titulo-cantralizado"></h3>
+                    <img src="logomp.jpg" alt="Trulli" class="imagembeneficios">
+                    <ul>
+                        <h2>Sobre nós</h2>
+			<p>somos uma empresa iniciante no ramo com o objetivo de satisfazer as necessidades de nossos clientes com belas joias de pratas</p>
+                    </ul>
+                </div>
+
+
+
+
+
+
+
+    <section id="destaques" class="section">
+<br><br>
+        <div class="container">
+            <h2>Destaques</h2>
+            <!-- Inserir conteúdo dos destaques aqui -->
+        </div>
+        <!-- Imagem de paralaxe para Destaques -->
+        <div class="parallax" style="background-image: url('https://blog.joiasnagalli.com.br/wp-content/uploads/2021/05/joias-nagalli-atacado-de-joias-pedras-preciosas.jpg');">
+            <a href="https://example.com/imagem-destaques.jpg" target="_blank"></a>
+
+<br><br><br>
+
+<!-- Cards -->
+        <div class="cards-container">
+            <div class="card">
+                <img src="img\colar\2b7a2069-646b-4f68-b4a7-20744d2053cf.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <!-- Repita os cards para os outros produtos -->
+            <div class="card">
+                <img src="img\colar\9e2c25ed-dea9-439d-9672-0be51288fc46.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+               <img src="img\colar\3b24cf5a-6294-425b-b996-a88df5b31a9b.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+            <div class="card">
+               <img src="img\colar\57d13222-613d-4109-ac25-ff77af9370b1.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="img\colar\563da9fb-ea5a-4bb7-8368-fcbb8d5bd1f2.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\colar\c1b122fc-752c-430d-b6ad-f8085e7a9a9c.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fim dos Cards -->
+		<br><br>
+
+<!-- Cards -->
+        <div class="cards-container">
+            <div class="card">
+                <img src="img\7c9ffd1b-84db-436c-a119-d8bc7fb05392.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <!-- Repita os cards para os outros produtos -->
+            <div class="card">
+                <img src="img\colar\8ee0f7ac-e818-4631-9f9a-65b976aa6ff8.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\colar\68fbfe31-4dd3-4605-ac11-03d4b75d229c.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\colar\278e93ea-c993-44f4-ac42-c84afca5ab4b.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\319e4d14-f1c6-449b-9e2f-2652c941a056.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\01f22242-da4b-41d4-bf59-996f28dae678.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fim dos Cards -->
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+       
+    <section id="novidades" class="section">
+<br><br>
+        <div class="container">
+            <h2>Novos Itens</h2>
+            <!-- Inserir conteúdo dos novos itens aqui -->
+        </div>
+        <!-- Imagem de paralaxe para Novos Itens -->
+        <div class="parallax" style="background-image: url('https://www.primegems.com.br/media/mgs_blog/c/a/capas_artigo_d-if_29_.png');">
+            <a href="https://example.com/imagem-novos-itens.jpg" target="_blank"></a>
+<br><br><br>
+
+<!-- Cards -->
+        <div class="cards-container">
+            <div class="card">
+                <img src="img\c483eb27-03cc-44ce-826f-69d631ebc778.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <!-- Repita os cards para os outros produtos -->
+            <div class="card">
+                <img src="img\68eef296-dafb-4029-ba20-49e028f8581f.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\61c74bb9-c89d-4d13-82c4-af17361105ed.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\8498f0e4-84a7-495f-b9ec-d30bb8cbf483.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\2bf69205-faf9-4859-901d-338fc77c4b6a.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\cc107eb8-9cb4-42a6-8092-636549ba5c3b.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fim dos Cards -->
+
+<br><br>
+
+<!-- Cards -->
+        <div class="cards-container">
+            <div class="card">
+                <img src="img\d7e72193-98ed-4138-83a5-5b4917f41456.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <!-- Repita os cards para os outros produtos -->
+            <div class="card">
+                <img src="img\be51fcc1-1a0e-4c22-b3b6-661707b8b860.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\7064934e-fb24-40bb-84a9-16705f928862.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\839f9480-339d-4308-8486-03f0d6b2f660.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\3605ddb7-c3a3-4a40-9c0e-c992e4a8afd8.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img\4179fe4c-d45a-4eeb-b14b-fdbce93724c0.jfif" alt="Trulli" class="imagemcard">
+                <div class="info">
+                    <h3>Anel de Noivado</h3>
+                    <p>Anel com ametista redonda e detalhes em ouro 18k.</p>
+                    <p class="price">R$ 2.500,00</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fim dos Cards -->
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container">
+<br><br>
+            <h2>Contato</h2>
+
+<button class="glow-on-hover" type="button">Faça seu pedido agora mesmo</button>
+<br><br>
+            <p>Entre em contato conosco por tais meios: </p>
+	    <p>Telefone:</p>
+	    <p>11 93205-4181</p>
+	    <p>Email:</p>
+	    <p>Manuella.pratas@gmail.com</p>
+	    <p>Endereço: </p>
+            <p>Rua ilidio figueiredo, 157 - São Paulo, SP, CEP 05204-020</p>
+            <p><a href="https://maps.google.com/?q=05204-020" target="_blank">Ver no Google Maps</a></p>
+        </div>
+    </section>
+
+<section>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.4528315049647!2d-46.75615377467457!3d-23.408003878905465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefca607c0d811%3A0x919b23c8ced1975c!2sR.%20Yl%C3%ADdio%20Figueiredo%20-%20Vila%20Perus%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005204-020!5e0!3m2!1spt-BR!2sbr!4v1719858774702!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Minha Loja de Joias. Todos os direitos reservados.</p>
+
+
+        </div>
+    </footer>
+
+ <!--INSTAGRAM--> 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> <a href="https://www.instagram.com/manuella.pratas.pedras" style="position:fixed;width:72px;height:72px;bottom:290px;right:16px;background: #D6249F;
+	    background: radial-gradient(circle at 100% 107%, #FDF497 0%, #FDF497 0%, #D6249F 45%,#D6249F 60%,#285AEB 90%);color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888; z-index:1000;" target="_blank"> <i style="margin-top:22px" class="fa fa-instagram"></i>
+
+ <!-- FIM INSTAGRAM -->
+
+
+
+<!-- FACEBOOK -->
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> <a href="https://api.whatsapp.com/send/?phone=11932054181" style="position:fixed;width:72px;height:72px;bottom:190px;right:16px;background:  #25D366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888; z-index:1000;" target="_blank"> <i style="margin-top:22px" class="fa fa-whatsapp"></i> 
+
+<!-- FIM FACEBOOK --> 
+</body>
+</html>
